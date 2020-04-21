@@ -1,0 +1,11 @@
+E:\Projects\SOCProject\ProductManagement\ProductManagementService\ProductManagementHost\bin\Debug\ProductManagementHost.exe.config
+E:\Projects\SOCProject\ProductManagement\ProductManagementService\ProductManagementHost\bin\Debug\ProductManagementHost.exe
+E:\Projects\SOCProject\ProductManagement\ProductManagementService\ProductManagementHost\bin\Debug\ProductManagementHost.pdb
+E:\Projects\SOCProject\ProductManagement\ProductManagementService\ProductManagementHost\bin\Debug\ProductManagementService.dll
+E:\Projects\SOCProject\ProductManagement\ProductManagementService\ProductManagementHost\bin\Debug\ProductManagementService.pdb
+E:\Projects\SOCProject\ProductManagement\ProductManagementService\ProductManagementHost\obj\Debug\ProductManagementHost.csprojAssemblyReference.cache
+E:\Projects\SOCProject\ProductManagement\ProductManagementService\ProductManagementHost\obj\Debug\ProductManagementHost.csproj.CopyComplete
+E:\Projects\SOCProject\ProductManagement\ProductManagementService\ProductManagementHost\obj\Debug\ProductManagementHost.exe
+E:\Projects\SOCProject\ProductManagement\ProductManagementService\ProductManagementHost\obj\Debug\ProductManagementHost.pdb
+E:\Projects\SOCProject\ProductManagement\ProductManagementService\ProductManagementHost\bin\Debug\ProductManagement.mdf
+E:\Projects\SOCProject\ProductManagement\ProductManagementService\ProductManagementHost\bin\Debug\ProductManagementService.dll.config

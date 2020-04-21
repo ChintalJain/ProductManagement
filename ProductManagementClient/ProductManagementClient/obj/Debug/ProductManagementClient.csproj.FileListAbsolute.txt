@@ -1,0 +1,9 @@
+E:\Projects\SOCProject\ProductManagement\ProductManagementClient\ProductManagementClient\bin\Debug\ProductManagementClient.exe.config
+E:\Projects\SOCProject\ProductManagement\ProductManagementClient\ProductManagementClient\bin\Debug\ProductManagementClient.exe
+E:\Projects\SOCProject\ProductManagement\ProductManagementClient\ProductManagementClient\bin\Debug\ProductManagementClient.pdb
+E:\Projects\SOCProject\ProductManagement\ProductManagementClient\ProductManagementClient\obj\Debug\ProductManagementClient.csprojAssemblyReference.cache
+E:\Projects\SOCProject\ProductManagement\ProductManagementClient\ProductManagementClient\obj\Debug\ProductManagementClient.Form1.resources
+E:\Projects\SOCProject\ProductManagement\ProductManagementClient\ProductManagementClient\obj\Debug\ProductManagementClient.Properties.Resources.resources
+E:\Projects\SOCProject\ProductManagement\ProductManagementClient\ProductManagementClient\obj\Debug\ProductManagementClient.csproj.GenerateResource.cache
+E:\Projects\SOCProject\ProductManagement\ProductManagementClient\ProductManagementClient\obj\Debug\ProductManagementClient.exe
+E:\Projects\SOCProject\ProductManagement\ProductManagementClient\ProductManagementClient\obj\Debug\ProductManagementClient.pdb

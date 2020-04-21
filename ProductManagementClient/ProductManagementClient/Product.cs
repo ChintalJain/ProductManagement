@@ -18,12 +18,14 @@ namespace ProductManagementClient
 
         public Product()
         {
+            this.ProductId = -1;
             this.quantityAtShop = 0;
             this.quantityAtGodown = 0;
         }
 
         public Product(string name, int price, int qAtShop, int qAtGodown, String des)
         {
+            this.productId = -1;
             this.productName = name;
             this.productPrice = price;
             this.quantityAtShop = qAtShop;
@@ -66,6 +68,7 @@ namespace ProductManagementClient
         public int TotalQuantity
         {
             get { return this.totalQuantity; }
+            set { this.totalQuantity=value; }
         }
         public string Description
         {

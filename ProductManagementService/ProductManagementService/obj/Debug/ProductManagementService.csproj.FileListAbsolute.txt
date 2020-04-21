@@ -1,0 +1,7 @@
+E:\Projects\SOCProject\ProductManagement\ProductManagementService\ProductManagementService\bin\Debug\ProductManagementService.dll.config
+E:\Projects\SOCProject\ProductManagement\ProductManagementService\ProductManagementService\bin\Debug\ProductManagementService.dll
+E:\Projects\SOCProject\ProductManagement\ProductManagementService\ProductManagementService\bin\Debug\ProductManagementService.pdb
+E:\Projects\SOCProject\ProductManagement\ProductManagementService\ProductManagementService\obj\Debug\ProductManagementService.dll
+E:\Projects\SOCProject\ProductManagement\ProductManagementService\ProductManagementService\obj\Debug\ProductManagementService.pdb
+E:\Projects\SOCProject\ProductManagement\ProductManagementService\ProductManagementService\bin\Debug\ProductManagement.mdf
+E:\Projects\SOCProject\ProductManagement\ProductManagementService\ProductManagementService\obj\Debug\ProductManagementService.csprojAssemblyReference.cache

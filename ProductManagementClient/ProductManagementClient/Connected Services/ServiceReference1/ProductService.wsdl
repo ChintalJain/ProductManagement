@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ProductService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:8733/Design_Time_Addresses/ProductManagementService/ProductService/?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:8733/Design_Time_Addresses/ProductManagementService/ProductService/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:8733/Design_Time_Addresses/ProductManagementService/ProductService/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ProductManagementService" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IProductService_AddProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddProduct" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_AddProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_GetAllProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllProduct" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_GetAllProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_UpdateProductName_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateProductName" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_UpdateProductName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateProductNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_UpdateProductPrice_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateProductPrice" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_UpdateProductPrice_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateProductPriceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_UpdateProductTotalQuantity_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateProductTotalQuantity" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_UpdateProductTotalQuantity_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateProductTotalQuantityResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_UpdateProductQuantityAtShop_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateProductQuantityAtShop" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_UpdateProductQuantityAtShop_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateProductQuantityAtShopResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_UpdateProductQuantityAtGodown_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateProductQuantityAtGodown" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_UpdateProductQuantityAtGodown_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateProductQuantityAtGodownResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_UpdateProductDescription_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateProductDescription" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_UpdateProductDescription_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateProductDescriptionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_GetProductOutOfStock_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductOutOfStock" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_GetProductOutOfStock_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductOutOfStockResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IProductService">
+    <wsdl:operation name="AddProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProductService/AddProduct" message="tns:IProductService_AddProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProductService/AddProductResponse" message="tns:IProductService_AddProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProductService/GetAllProduct" message="tns:IProductService_GetAllProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProductService/GetAllProductResponse" message="tns:IProductService_GetAllProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProductName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProductService/UpdateProductName" message="tns:IProductService_UpdateProductName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProductService/UpdateProductNameResponse" message="tns:IProductService_UpdateProductName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProductPrice">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProductService/UpdateProductPrice" message="tns:IProductService_UpdateProductPrice_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProductService/UpdateProductPriceResponse" message="tns:IProductService_UpdateProductPrice_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProductTotalQuantity">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProductService/UpdateProductTotalQuantity" message="tns:IProductService_UpdateProductTotalQuantity_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProductService/UpdateProductTotalQuantityResponse" message="tns:IProductService_UpdateProductTotalQuantity_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProductQuantityAtShop">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProductService/UpdateProductQuantityAtShop" message="tns:IProductService_UpdateProductQuantityAtShop_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProductService/UpdateProductQuantityAtShopResponse" message="tns:IProductService_UpdateProductQuantityAtShop_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProductQuantityAtGodown">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProductService/UpdateProductQuantityAtGodown" message="tns:IProductService_UpdateProductQuantityAtGodown_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProductService/UpdateProductQuantityAtGodownResponse" message="tns:IProductService_UpdateProductQuantityAtGodown_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProductDescription">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProductService/UpdateProductDescription" message="tns:IProductService_UpdateProductDescription_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProductService/UpdateProductDescriptionResponse" message="tns:IProductService_UpdateProductDescription_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductOutOfStock">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProductService/GetProductOutOfStock" message="tns:IProductService_GetProductOutOfStock_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProductService/GetProductOutOfStockResponse" message="tns:IProductService_GetProductOutOfStock_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IProductService" type="tns:IProductService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AddProduct">
+      <soap:operation soapAction="http://tempuri.org/IProductService/AddProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllProduct">
+      <soap:operation soapAction="http://tempuri.org/IProductService/GetAllProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProductName">
+      <soap:operation soapAction="http://tempuri.org/IProductService/UpdateProductName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProductPrice">
+      <soap:operation soapAction="http://tempuri.org/IProductService/UpdateProductPrice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProductTotalQuantity">
+      <soap:operation soapAction="http://tempuri.org/IProductService/UpdateProductTotalQuantity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProductQuantityAtShop">
+      <soap:operation soapAction="http://tempuri.org/IProductService/UpdateProductQuantityAtShop" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProductQuantityAtGodown">
+      <soap:operation soapAction="http://tempuri.org/IProductService/UpdateProductQuantityAtGodown" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProductDescription">
+      <soap:operation soapAction="http://tempuri.org/IProductService/UpdateProductDescription" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductOutOfStock">
+      <soap:operation soapAction="http://tempuri.org/IProductService/GetProductOutOfStock" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ProductService">
+    <wsdl:port name="BasicHttpBinding_IProductService" binding="tns:BasicHttpBinding_IProductService">
+      <soap:address location="http://localhost:8733/Design_Time_Addresses/ProductManagementService/ProductService/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
