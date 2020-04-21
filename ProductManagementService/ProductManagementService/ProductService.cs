@@ -160,6 +160,32 @@ namespace ProductManagementService
             conn.Close();
             return productList;
         }
+        public List<Product> GetProductInStock()
+        {
+            List<Product> productList = new List<Product>();
+            string q = "select * from Product_Details where QuantityAtShop>0" +
+                "";
+
+            string cs = ConfigurationManager.ConnectionStrings["ProductManagement"].ConnectionString;
+            SqlConnection conn = new SqlConnection(cs);
+            SqlCommand cmd = new SqlCommand(q, conn);
+            conn.Open();
+            SqlDataReader rdr = cmd.ExecuteReader();
+            while (rdr.Read())
+            {
+                Product p = new Product();
+                p.ProductId = Convert.ToInt32(rdr["ProductId"]);
+                p.ProductName = rdr["ProductName"].ToString();
+                p.ProductPrice = Convert.ToInt32(rdr["ProductPrice"]);
+                p.Description = rdr["Description"].ToString();
+                p.QuantityAtShop = Convert.ToInt32(rdr["QuantityAtShop"]);
+                p.QuantityAtGodown = Convert.ToInt32(rdr["QuantityAtGodown"]);
+                p.TotalQuantity = Convert.ToInt32(rdr["TotalQuantity"]);
+                productList.Add(p);
+            }
+            conn.Close();
+            return productList;
+        }
 
     }
 }

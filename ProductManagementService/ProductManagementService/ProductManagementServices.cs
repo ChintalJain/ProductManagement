@@ -30,6 +30,8 @@ namespace ProductManagementService
         void UpdateProductDescription(int id, string des);
         [OperationContract]
         List<Product> GetProductOutOfStock();
+        [OperationContract]
+        List<Product> GetProductInStock();
 
     }
 }
