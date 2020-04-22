@@ -45,8 +45,10 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bill.cs" />
     <Compile Include="ProductManagementServices.cs" />
     <Compile Include="Product.cs" />
+    <Compile Include="ProductSales.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ProductService.cs" />
   </ItemGroup>

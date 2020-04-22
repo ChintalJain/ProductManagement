@@ -211,6 +211,12 @@ namespace ProductManagementClient.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetProductOutOfStock", ReplyAction="http://tempuri.org/IProductService/GetProductOutOfStockResponse")]
         System.Threading.Tasks.Task<ProductManagementClient.ServiceReference1.Product[]> GetProductOutOfStockAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetProductInStock", ReplyAction="http://tempuri.org/IProductService/GetProductInStockResponse")]
+        ProductManagementClient.ServiceReference1.Product[] GetProductInStock();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetProductInStock", ReplyAction="http://tempuri.org/IProductService/GetProductInStockResponse")]
+        System.Threading.Tasks.Task<ProductManagementClient.ServiceReference1.Product[]> GetProductInStockAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -310,6 +316,14 @@ namespace ProductManagementClient.ServiceReference1 {
         
         public System.Threading.Tasks.Task<ProductManagementClient.ServiceReference1.Product[]> GetProductOutOfStockAsync() {
             return base.Channel.GetProductOutOfStockAsync();
+        }
+        
+        public ProductManagementClient.ServiceReference1.Product[] GetProductInStock() {
+            return base.Channel.GetProductInStock();
+        }
+        
+        public System.Threading.Tasks.Task<ProductManagementClient.ServiceReference1.Product[]> GetProductInStockAsync() {
+            return base.Channel.GetProductInStockAsync();
         }
     }
 }

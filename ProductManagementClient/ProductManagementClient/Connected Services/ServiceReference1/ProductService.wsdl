@@ -61,6 +61,12 @@
   <wsdl:message name="IProductService_GetProductOutOfStock_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetProductOutOfStockResponse" />
   </wsdl:message>
+  <wsdl:message name="IProductService_GetProductInStock_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductInStock" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_GetProductInStock_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductInStockResponse" />
+  </wsdl:message>
   <wsdl:portType name="IProductService">
     <wsdl:operation name="AddProduct">
       <wsdl:input wsaw:Action="http://tempuri.org/IProductService/AddProduct" message="tns:IProductService_AddProduct_InputMessage" />
@@ -97,6 +103,10 @@
     <wsdl:operation name="GetProductOutOfStock">
       <wsdl:input wsaw:Action="http://tempuri.org/IProductService/GetProductOutOfStock" message="tns:IProductService_GetProductOutOfStock_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IProductService/GetProductOutOfStockResponse" message="tns:IProductService_GetProductOutOfStock_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductInStock">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProductService/GetProductInStock" message="tns:IProductService_GetProductInStock_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProductService/GetProductInStockResponse" message="tns:IProductService_GetProductInStock_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IProductService" type="tns:IProductService">
@@ -175,6 +185,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetProductOutOfStock">
       <soap:operation soapAction="http://tempuri.org/IProductService/GetProductOutOfStock" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductInStock">
+      <soap:operation soapAction="http://tempuri.org/IProductService/GetProductInStock" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

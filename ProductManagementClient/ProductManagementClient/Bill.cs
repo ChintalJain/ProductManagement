@@ -9,42 +9,50 @@ namespace ProductManagementClient
 
     public class Bill
     {
-        private int billId { get; set; }
-        private DateTime billDate { get; set; }
+        private int billId;
+        private DateTime billDate;
+        private int totalProducts;
+        private int totalItems;
         private int totalAmount;
-        private int discount;
-        private int netAmount;
-        private string paymentMode;
-        private Order order;
+        private List<ServiceReference1.Product> products;
+        private List<int> quantity;
+
         public Bill()
         {
+            this.billId = -1;
             this.billDate = DateTime.Today;
+            this.totalProducts = 0;
+            this.totalItems = 0;
+            this.totalAmount = 0;
+            products = new List<ServiceReference1.Product>();
+            quantity = new List<int>();
         }
-        public Bill(Order o)
+        public int BillId
         {
-            this.billDate = DateTime.Today;
-            this.order = o;
-            calculateTotalAmount();
+            get { return this.billId; }
+            set { this.billId=value; }
         }
-
+        public DateTime BillDate
+        {
+            get { return this.billDate; }
+            set { this.billDate = value; }
+        }
+        public int TotalProducts
+        {
+            get { return this.totalProducts; }
+            set { this.totalProducts = value; }
+        }
+        public int TotalItems
+        {
+            get { return this.totalItems; }
+            set { this.totalItems = value; }
+        }
         public int TotalAmount
         {
             get { return this.totalAmount; }
+            set { this.totalAmount = value; }
         }
-        public int NetAmount
-        {
-            get { return this.netAmount; }
-            set { this.netAmount = value; }
-        }
-        public string PaymentMode
-        {
-            get { return this.paymentMode; }
-            set { this.paymentMode = value; }
-        }
-        public Order SetOrder
-        {
-            set { this.order = value; this.calculateTotalAmount(); }
-        }
+
         private void calculateTotalAmount()
         {
             List<Product> pList = this.order.Products;
@@ -57,6 +65,29 @@ namespace ProductManagementClient
             }
             this.totalAmount = sum;
             this.netAmount = sum;
+        }
+        public void addProductToBillr(Product p, int q)
+        {
+            products.Add(p);
+            quantity.Add(q);
+            totalProduct++;
+            totalItem += q;
+        }
+        public void removeProductFromBill(Product p)
+        {
+            int i = 0;
+            foreach (Product p1 in this.products)
+            {
+                if (p1.ProductId == p.ProductId)
+                {
+                    break;
+                }
+                i++;
+            }
+            products.RemoveAt(i);
+            totalProduct--;
+            totalItem -= quantity[i];
+            quantity.RemoveAt(i);
         }
     }
 }

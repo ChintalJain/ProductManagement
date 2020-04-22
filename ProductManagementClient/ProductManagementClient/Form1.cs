@@ -14,6 +14,7 @@ namespace ProductManagementClient
     {
         List<Panel> productsPanel;
         List<Panel> mainPanel;
+        List<Panel> billsPanel;
         List<ServiceReference1.Product> products;
         public Form1()
         {
@@ -22,11 +23,13 @@ namespace ProductManagementClient
             productsPanel = new List<Panel>();
 
             mainPanel.Add(ProductsPanel);
+            mainPanel.Add(BillPanel);
             productsPanel.Add(AddProductPanel);
             productsPanel.Add(ViewProductsPanel);
             productsPanel.Add(QuantityPanel);
             productsPanel.Add(UpdateProductPanel);
             productsPanel.Add(ProductOutOfStockPanel);
+            billsPanel.Add(PlaceOrderPanel);
         }
 
         private void ProductsBtn_Click(object sender, EventArgs e)
@@ -359,6 +362,60 @@ namespace ProductManagementClient
             ServiceReference1.ProductServiceClient client = new ServiceReference1.ProductServiceClient();
             products = new List<ServiceReference1.Product>(client.GetProductOutOfStock());
             setGridView4();
+        }
+
+        private void BillsBtn_Click(object sender, EventArgs e)
+        {
+            this.mainPanel[1].BringToFront();
+            this.billsPanel[0].BringToFront();
+        }
+
+        private void PlaceOrderBtn_Click(object sender, EventArgs e)
+        {
+            QuantityInOrderTB.Text = "1";
+            ProductInStockLB.Items.Clear();
+            ProductInOrderLB.Items.Clear();
+            TotalProductsTB.Text = "";
+            TotalItemsTB.Text = "";
+            TotalAmountTB.Text = "";
+            OrderIDLbl.Text = "";
+            ServiceReference1.ProductServiceClient client = new ServiceReference1.ProductServiceClient();
+            products = new List<ServiceReference1.Product>(client.GetProductInStock());
+            foreach(ServiceReference1.Product p in products)
+            {
+                ProductInStockLB.Items.Add("Id :- " + p.ProductId + " Name :- " + p.ProductName);
+            }
+            //Init Bill Class
+        }
+
+        private void AddToOrderBtn_Click(object sender, EventArgs e)
+        {
+            int id = ProductInStockLB.SelectedIndex;
+            if(id==-1)
+            {
+                MessageBox.Show("Please Select Product From Product In Stock.");
+                return;
+            }
+            ServiceReference1.Product p = products[id];
+            int qty = Convert.ToInt32(QuantityInOrderTB.Text);
+            if(p.QuantityAtShop<qty)
+            {
+                MessageBox.Show("Product is not available in "+qty+" Quantity.");
+                return;
+            }
+            //Add product to bill class
+
+            ProductInOrderLB.Items.Add("Id :- "+p.ProductId+" Name :- "+p.ProductName+" Price :- "+p.ProductPrice+" Total Amount :-"+p.ProductPrice*qty);
+        }
+
+        private void RemoveFromOrderTB_Click(object sender, EventArgs e)
+        {
+            int id = ProductInStockLB.SelectedIndex;
+            if(id==-1)
+            {
+                MessageBox.Show("Please Select Product From Product In Order.");
+                return;
+            }
         }
     }
 }
