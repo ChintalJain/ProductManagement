@@ -18,20 +18,38 @@ namespace ProductManagementService
 
         [OperationContract]
         void UpdateProductName(int id,string name);
+
         [OperationContract]
         void UpdateProductPrice(int id, int price);
+        
         [OperationContract]
         void UpdateProductTotalQuantity(int id, int tq);
+        
         [OperationContract]
         void UpdateProductQuantityAtShop(int id, int qas);
+        
         [OperationContract]
         void UpdateProductQuantityAtGodown(int id, int qag);
+        
         [OperationContract]
         void UpdateProductDescription(int id, string des);
+        
         [OperationContract]
         List<Product> GetProductOutOfStock();
+        
         [OperationContract]
         List<Product> GetProductInStock();
-
+        
+        [OperationContract]
+        int AddBill(Bill bill);
+        
+        [OperationContract]
+        List<ProductSales> GetLastWeekSales();
+        
+        [OperationContract]
+        List<ProductSales> GetLastMonthSales();
+        
+        [OperationContract]
+        List<ProductSales> GetLastYearSales();
     }
 }

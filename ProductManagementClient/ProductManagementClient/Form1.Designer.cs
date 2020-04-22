@@ -92,6 +92,13 @@
             this.PaymentMethodLB = new System.Windows.Forms.ListBox();
             this.label15 = new System.Windows.Forms.Label();
             this.OrderIDLbl = new System.Windows.Forms.Label();
+            this.LastYearSalesBtn = new System.Windows.Forms.Button();
+            this.LastWeekSalesPanel = new System.Windows.Forms.Panel();
+            this.dataGridView5 = new System.Windows.Forms.DataGridView();
+            this.LastMonthSalesPanel = new System.Windows.Forms.Panel();
+            this.dataGridView6 = new System.Windows.Forms.DataGridView();
+            this.LastYearSalesPanel = new System.Windows.Forms.Panel();
+            this.dataGridView7 = new System.Windows.Forms.DataGridView();
             this.ProductsPanel.SuspendLayout();
             this.ProductOutOfStockPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
@@ -104,6 +111,12 @@
             this.AddProductPanel.SuspendLayout();
             this.BillPanel.SuspendLayout();
             this.PlaceOrderPanel.SuspendLayout();
+            this.LastWeekSalesPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
+            this.LastMonthSalesPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).BeginInit();
+            this.LastYearSalesPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView7)).BeginInit();
             this.SuspendLayout();
             // 
             // ProductsPanel
@@ -509,6 +522,10 @@
             // 
             // BillPanel
             // 
+            this.BillPanel.Controls.Add(this.LastYearSalesPanel);
+            this.BillPanel.Controls.Add(this.LastMonthSalesPanel);
+            this.BillPanel.Controls.Add(this.LastWeekSalesPanel);
+            this.BillPanel.Controls.Add(this.LastYearSalesBtn);
             this.BillPanel.Controls.Add(this.PlaceOrderPanel);
             this.BillPanel.Controls.Add(this.LastWeekSalesBtn);
             this.BillPanel.Controls.Add(this.LastMonthSalesBtn);
@@ -540,21 +557,23 @@
             // 
             // LastMonthSalesBtn
             // 
-            this.LastMonthSalesBtn.Location = new System.Drawing.Point(307, 34);
+            this.LastMonthSalesBtn.Location = new System.Drawing.Point(599, 34);
             this.LastMonthSalesBtn.Name = "LastMonthSalesBtn";
             this.LastMonthSalesBtn.Size = new System.Drawing.Size(238, 57);
             this.LastMonthSalesBtn.TabIndex = 1;
             this.LastMonthSalesBtn.Text = "Last Month Sales";
             this.LastMonthSalesBtn.UseVisualStyleBackColor = true;
+            this.LastMonthSalesBtn.Click += new System.EventHandler(this.LastMonthSalesBtn_Click);
             // 
             // LastWeekSalesBtn
             // 
-            this.LastWeekSalesBtn.Location = new System.Drawing.Point(614, 34);
+            this.LastWeekSalesBtn.Location = new System.Drawing.Point(307, 34);
             this.LastWeekSalesBtn.Name = "LastWeekSalesBtn";
             this.LastWeekSalesBtn.Size = new System.Drawing.Size(238, 57);
             this.LastWeekSalesBtn.TabIndex = 2;
             this.LastWeekSalesBtn.Text = "Last Week Sales";
             this.LastWeekSalesBtn.UseVisualStyleBackColor = true;
+            this.LastWeekSalesBtn.Click += new System.EventHandler(this.LastWeekSalesBtn_Click);
             // 
             // PlaceOrderPanel
             // 
@@ -577,7 +596,7 @@
             this.PlaceOrderPanel.Controls.Add(this.label10);
             this.PlaceOrderPanel.Controls.Add(this.label9);
             this.PlaceOrderPanel.Controls.Add(this.ProductInStockLB);
-            this.PlaceOrderPanel.Location = new System.Drawing.Point(31, 123);
+            this.PlaceOrderPanel.Location = new System.Drawing.Point(40, 123);
             this.PlaceOrderPanel.Name = "PlaceOrderPanel";
             this.PlaceOrderPanel.Size = new System.Drawing.Size(1529, 578);
             this.PlaceOrderPanel.TabIndex = 3;
@@ -711,6 +730,7 @@
             this.GenerateBillBtn.TabIndex = 14;
             this.GenerateBillBtn.Text = "Generate Bill";
             this.GenerateBillBtn.UseVisualStyleBackColor = true;
+            this.GenerateBillBtn.Click += new System.EventHandler(this.GenerateBillBtn_Click);
             // 
             // ConfirmOrderBtn
             // 
@@ -720,6 +740,7 @@
             this.ConfirmOrderBtn.TabIndex = 15;
             this.ConfirmOrderBtn.Text = "Confirm Order";
             this.ConfirmOrderBtn.UseVisualStyleBackColor = true;
+            this.ConfirmOrderBtn.Click += new System.EventHandler(this.ConfirmOrderBtn_Click);
             // 
             // PaymentMethodLB
             // 
@@ -751,6 +772,79 @@
             this.OrderIDLbl.Size = new System.Drawing.Size(0, 20);
             this.OrderIDLbl.TabIndex = 18;
             // 
+            // LastYearSalesBtn
+            // 
+            this.LastYearSalesBtn.Location = new System.Drawing.Point(876, 34);
+            this.LastYearSalesBtn.Name = "LastYearSalesBtn";
+            this.LastYearSalesBtn.Size = new System.Drawing.Size(238, 57);
+            this.LastYearSalesBtn.TabIndex = 4;
+            this.LastYearSalesBtn.Text = "Last Year Sales";
+            this.LastYearSalesBtn.UseVisualStyleBackColor = true;
+            this.LastYearSalesBtn.Click += new System.EventHandler(this.LastYearSalesBtn_Click);
+            // 
+            // LastWeekSalesPanel
+            // 
+            this.LastWeekSalesPanel.Controls.Add(this.dataGridView5);
+            this.LastWeekSalesPanel.Location = new System.Drawing.Point(40, 123);
+            this.LastWeekSalesPanel.Name = "LastWeekSalesPanel";
+            this.LastWeekSalesPanel.Size = new System.Drawing.Size(1529, 578);
+            this.LastWeekSalesPanel.TabIndex = 19;
+            // 
+            // dataGridView5
+            // 
+            this.dataGridView5.AllowUserToAddRows = false;
+            this.dataGridView5.AllowUserToDeleteRows = false;
+            this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView5.Location = new System.Drawing.Point(41, 38);
+            this.dataGridView5.Name = "dataGridView5";
+            this.dataGridView5.ReadOnly = true;
+            this.dataGridView5.RowHeadersWidth = 62;
+            this.dataGridView5.RowTemplate.Height = 28;
+            this.dataGridView5.Size = new System.Drawing.Size(739, 246);
+            this.dataGridView5.TabIndex = 0;
+            // 
+            // LastMonthSalesPanel
+            // 
+            this.LastMonthSalesPanel.Controls.Add(this.dataGridView6);
+            this.LastMonthSalesPanel.Location = new System.Drawing.Point(40, 123);
+            this.LastMonthSalesPanel.Name = "LastMonthSalesPanel";
+            this.LastMonthSalesPanel.Size = new System.Drawing.Size(1529, 578);
+            this.LastMonthSalesPanel.TabIndex = 1;
+            // 
+            // dataGridView6
+            // 
+            this.dataGridView6.AllowUserToAddRows = false;
+            this.dataGridView6.AllowUserToDeleteRows = false;
+            this.dataGridView6.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView6.Location = new System.Drawing.Point(41, 38);
+            this.dataGridView6.Name = "dataGridView6";
+            this.dataGridView6.ReadOnly = true;
+            this.dataGridView6.RowHeadersWidth = 62;
+            this.dataGridView6.RowTemplate.Height = 28;
+            this.dataGridView6.Size = new System.Drawing.Size(739, 246);
+            this.dataGridView6.TabIndex = 1;
+            // 
+            // LastYearSalesPanel
+            // 
+            this.LastYearSalesPanel.Controls.Add(this.dataGridView7);
+            this.LastYearSalesPanel.Location = new System.Drawing.Point(40, 123);
+            this.LastYearSalesPanel.Name = "LastYearSalesPanel";
+            this.LastYearSalesPanel.Size = new System.Drawing.Size(1529, 578);
+            this.LastYearSalesPanel.TabIndex = 2;
+            // 
+            // dataGridView7
+            // 
+            this.dataGridView7.AllowUserToAddRows = false;
+            this.dataGridView7.AllowUserToDeleteRows = false;
+            this.dataGridView7.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView7.Location = new System.Drawing.Point(41, 38);
+            this.dataGridView7.Name = "dataGridView7";
+            this.dataGridView7.ReadOnly = true;
+            this.dataGridView7.RowHeadersWidth = 62;
+            this.dataGridView7.RowTemplate.Height = 28;
+            this.dataGridView7.Size = new System.Drawing.Size(739, 246);
+            this.dataGridView7.TabIndex = 2;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -778,6 +872,12 @@
             this.BillPanel.ResumeLayout(false);
             this.PlaceOrderPanel.ResumeLayout(false);
             this.PlaceOrderPanel.PerformLayout();
+            this.LastWeekSalesPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
+            this.LastMonthSalesPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).EndInit();
+            this.LastYearSalesPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView7)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -848,6 +948,13 @@
         private System.Windows.Forms.Button RemoveFromOrderTB;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label OrderIDLbl;
+        private System.Windows.Forms.Button LastYearSalesBtn;
+        private System.Windows.Forms.Panel LastWeekSalesPanel;
+        private System.Windows.Forms.DataGridView dataGridView5;
+        private System.Windows.Forms.Panel LastMonthSalesPanel;
+        private System.Windows.Forms.DataGridView dataGridView6;
+        private System.Windows.Forms.Panel LastYearSalesPanel;
+        private System.Windows.Forms.DataGridView dataGridView7;
     }
 }
 

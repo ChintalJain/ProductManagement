@@ -14,6 +14,7 @@ namespace ProductManagementClient
         private int totalProducts;
         private int totalItems;
         private int totalAmount;
+        private string paymentMethod;
         private List<ServiceReference1.Product> products;
         private List<int> quantity;
 
@@ -52,42 +53,47 @@ namespace ProductManagementClient
             get { return this.totalAmount; }
             set { this.totalAmount = value; }
         }
-
-        private void calculateTotalAmount()
+        public string PaymentMethod
         {
-            List<Product> pList = this.order.Products;
-            List<int> qList = this.order.Quantity;
+            get { return this.paymentMethod; }
+            set { this.paymentMethod = value; }
+        }
+        public List<ServiceReference1.Product> Products
+        {
+            get { return this.products; }
+            set { this.products = value; }
+        }
+        public List<int> Quantity
+        {
+            get { return this.quantity; }
+            set { this.quantity = value; }
+        }
+
+        public void calculateTotalAmount()
+        {
             int i = 0, sum = 0;
-            foreach (Product p in pList)
+            foreach (ServiceReference1.Product p in products)
             {
-                sum += qList[i] * p.ProductPrice;
+                sum += quantity[i] * p.ProductPrice;
                 i++;
             }
             this.totalAmount = sum;
-            this.netAmount = sum;
         }
-        public void addProductToBillr(Product p, int q)
+        public void addProductToBill(ServiceReference1.Product p, int q)
         {
             products.Add(p);
             quantity.Add(q);
-            totalProduct++;
-            totalItem += q;
+            totalProducts++;
+            totalItems += q;
         }
-        public void removeProductFromBill(Product p)
+        public ServiceReference1.Product removeProductFromBill(int index)
         {
-            int i = 0;
-            foreach (Product p1 in this.products)
-            {
-                if (p1.ProductId == p.ProductId)
-                {
-                    break;
-                }
-                i++;
-            }
-            products.RemoveAt(i);
-            totalProduct--;
-            totalItem -= quantity[i];
-            quantity.RemoveAt(i);
+            ServiceReference1.Product p = this.products[index];
+            products.RemoveAt(index);
+            totalProducts--;
+            totalItems -= quantity[index];
+            quantity.RemoveAt(index);
+            return p;
         }
     }
 }

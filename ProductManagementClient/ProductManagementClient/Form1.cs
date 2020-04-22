@@ -16,11 +16,13 @@ namespace ProductManagementClient
         List<Panel> mainPanel;
         List<Panel> billsPanel;
         List<ServiceReference1.Product> products;
+        Bill bill;
         public Form1()
         {
             InitializeComponent();
             mainPanel = new List<Panel>();
             productsPanel = new List<Panel>();
+            billsPanel = new List<Panel>();
 
             mainPanel.Add(ProductsPanel);
             mainPanel.Add(BillPanel);
@@ -30,6 +32,9 @@ namespace ProductManagementClient
             productsPanel.Add(UpdateProductPanel);
             productsPanel.Add(ProductOutOfStockPanel);
             billsPanel.Add(PlaceOrderPanel);
+            billsPanel.Add(LastWeekSalesPanel);
+            billsPanel.Add(LastMonthSalesPanel);
+            billsPanel.Add(LastYearSalesPanel);
         }
 
         private void ProductsBtn_Click(object sender, EventArgs e)
@@ -370,7 +375,7 @@ namespace ProductManagementClient
             this.billsPanel[0].BringToFront();
         }
 
-        private void PlaceOrderBtn_Click(object sender, EventArgs e)
+        private void initOrderDetails()
         {
             QuantityInOrderTB.Text = "1";
             ProductInStockLB.Items.Clear();
@@ -378,14 +383,20 @@ namespace ProductManagementClient
             TotalProductsTB.Text = "";
             TotalItemsTB.Text = "";
             TotalAmountTB.Text = "";
-            OrderIDLbl.Text = "";
             ServiceReference1.ProductServiceClient client = new ServiceReference1.ProductServiceClient();
             products = new List<ServiceReference1.Product>(client.GetProductInStock());
-            foreach(ServiceReference1.Product p in products)
+            foreach (ServiceReference1.Product p in products)
             {
                 ProductInStockLB.Items.Add("Id :- " + p.ProductId + " Name :- " + p.ProductName);
             }
-            //Init Bill Class
+            PaymentMethodLB.SelectedIndex = -1;
+            bill = new Bill();
+        }
+        private void PlaceOrderBtn_Click(object sender, EventArgs e)
+        {
+            this.billsPanel[0].BringToFront();
+            initOrderDetails();
+            OrderIDLbl.Text = "";
         }
 
         private void AddToOrderBtn_Click(object sender, EventArgs e)
@@ -400,22 +411,108 @@ namespace ProductManagementClient
             int qty = Convert.ToInt32(QuantityInOrderTB.Text);
             if(p.QuantityAtShop<qty)
             {
-                MessageBox.Show("Product is not available in "+qty+" Quantity.");
+                MessageBox.Show("Product is available in only "+p.QuantityAtShop+" Quantity in shop.");
                 return;
             }
-            //Add product to bill class
-
+            this.bill.addProductToBill(p, qty);
             ProductInOrderLB.Items.Add("Id :- "+p.ProductId+" Name :- "+p.ProductName+" Price :- "+p.ProductPrice+" Total Amount :-"+p.ProductPrice*qty);
+            ProductInStockLB.Items.RemoveAt(id);
+            products.RemoveAt(id);
         }
 
         private void RemoveFromOrderTB_Click(object sender, EventArgs e)
         {
-            int id = ProductInStockLB.SelectedIndex;
+            int id = ProductInOrderLB.SelectedIndex;
             if(id==-1)
             {
                 MessageBox.Show("Please Select Product From Product In Order.");
                 return;
             }
+            ServiceReference1.Product p = this.bill.removeProductFromBill(id);
+            ProductInOrderLB.Items.RemoveAt(id);
+            ProductInStockLB.Items.Add("Id :- " + p.ProductId + " Name :- " + p.ProductName);
+            this.products.Add(p);
+        }
+
+        private void GenerateBillBtn_Click(object sender, EventArgs e)
+        {
+            int count = ProductInOrderLB.Items.Count;
+            if(count==0)
+            {
+                MessageBox.Show("Please Add Product To Order.");
+                return;
+            }
+            this.bill.calculateTotalAmount();
+            TotalProductsTB.Text = bill.TotalProducts.ToString();
+            TotalItemsTB.Text = bill.TotalItems.ToString();
+            TotalAmountTB.Text = bill.TotalAmount.ToString();
+        }
+
+        private void ConfirmOrderBtn_Click(object sender, EventArgs e)
+        {
+            int id=PaymentMethodLB.SelectedIndex;
+            int count = ProductInOrderLB.Items.Count;
+            if (count == 0)
+            {
+                MessageBox.Show("Please Add Product To Order.");
+                return;
+            }
+            this.bill.calculateTotalAmount();
+            TotalProductsTB.Text = bill.TotalProducts.ToString();
+            TotalItemsTB.Text = bill.TotalItems.ToString();
+            TotalAmountTB.Text = bill.TotalAmount.ToString();
+            if (id==-1)
+            {
+                MessageBox.Show("Please Select Payment Method.");
+                return;
+            }
+            bill.PaymentMethod = PaymentMethodLB.SelectedItem.ToString();
+            ServiceReference1.Bill b = new ServiceReference1.Bill();
+            b.BillId = bill.BillId;
+            b.BillDate = bill.BillDate;
+            b.TotalProducts = bill.TotalProducts;
+            b.TotalItems = bill.TotalItems;
+            b.TotalAmount = bill.TotalAmount;
+            b.PaymentMethod = bill.PaymentMethod;
+            b.Products = bill.Products.ToArray();
+            b.Quantity = bill.Quantity.ToArray();
+            ServiceReference1.ProductServiceClient client = new ServiceReference1.ProductServiceClient();
+            int billId = client.AddBill(b);
+            if(billId==-1)
+            {
+                OrderIDLbl.Text = "Error in adding to database.";
+                return;
+            }
+            OrderIDLbl.Text = "Bill added with id :- "+billId;
+            initOrderDetails();
+            return;
+        }
+
+        private void LastWeekSalesBtn_Click(object sender, EventArgs e)
+        {
+            this.billsPanel[1].BringToFront();
+            var source = new BindingSource();
+            ServiceReference1.ProductServiceClient client = new ServiceReference1.ProductServiceClient();
+            source.DataSource = client.GetLastWeekSales();
+            dataGridView5.DataSource = source;
+        }
+
+        private void LastMonthSalesBtn_Click(object sender, EventArgs e)
+        {
+            this.billsPanel[2].BringToFront();
+            var source = new BindingSource();
+            ServiceReference1.ProductServiceClient client = new ServiceReference1.ProductServiceClient();
+            source.DataSource = client.GetLastMonthSales();
+            dataGridView6.DataSource = source;
+        }
+
+        private void LastYearSalesBtn_Click(object sender, EventArgs e)
+        {
+            this.billsPanel[3].BringToFront();
+            var source = new BindingSource();
+            ServiceReference1.ProductServiceClient client = new ServiceReference1.ProductServiceClient();
+            source.DataSource = client.GetLastYearSales(); ;
+            dataGridView7.DataSource = source;
         }
     }
 }

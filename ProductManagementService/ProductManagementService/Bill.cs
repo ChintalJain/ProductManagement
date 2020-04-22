@@ -6,13 +6,14 @@ using System.Threading.Tasks;
 
 namespace ProductManagementService
 {
-    class Bill
+    public class Bill
     {
         private int billId;
         private DateTime billDate;
         private int totalProducts;
         private int totalItems;
         private int totalAmount;
+        private string paymentMethod;
         private List<Product> products;
         private List<int> quantity;
 
@@ -60,6 +61,11 @@ namespace ProductManagementService
         {
             get { return this.quantity; }
             set { this.quantity = value; }
+        }
+        public string PaymentMethod
+        {
+            get { return this.paymentMethod; }
+            set { this.paymentMethod = value; }
         }
 
     }

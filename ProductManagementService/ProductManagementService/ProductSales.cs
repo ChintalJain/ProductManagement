@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProductManagementService
 {
-    class ProductSales
+    public class ProductSales
     {
         private int productId;
         private string productName;

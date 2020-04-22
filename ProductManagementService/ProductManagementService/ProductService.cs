@@ -138,7 +138,7 @@ namespace ProductManagementService
         public List<Product> GetProductOutOfStock()
         {
             List<Product> productList = new List<Product>();
-            string q = "select * from Product_Details where TotalQuantity=0 or QuantityAtShop=0 order by TotalQuantity";
+            string q = "select * from Product_Details where QuantityAtShop=0 order by TotalQuantity";
 
             string cs = ConfigurationManager.ConnectionStrings["ProductManagement"].ConnectionString;
             SqlConnection conn = new SqlConnection(cs);
@@ -185,6 +185,275 @@ namespace ProductManagementService
             }
             conn.Close();
             return productList;
+        }
+        public int AddBill(Bill bill)
+        {
+            string q = "insert into Bill_Details (BillDate,TotalProducts,TotalItems,TotalAmount,PaymentMethod) output inserted.BillId values (@BD,@TP,@TI,@TA,@PM)";
+            string q1 = "insert into ProductInBill (BillId,ProductId,Quantity) values (@BI,@PI,@QTY)";
+            string cs = ConfigurationManager.ConnectionStrings["ProductManagement"].ConnectionString;
+            SqlConnection conn = new SqlConnection(cs);
+            SqlCommand cmd = new SqlCommand(q, conn);
+            cmd.Parameters.AddWithValue("@BD",bill.BillDate);
+            cmd.Parameters.AddWithValue("@TP", bill.TotalProducts);
+            cmd.Parameters.AddWithValue("@TI", bill.TotalItems);
+            cmd.Parameters.AddWithValue("@TA", bill.TotalAmount);
+            cmd.Parameters.AddWithValue("@PM", bill.PaymentMethod);
+            conn.Open();
+            int id = Convert.ToInt32(cmd.ExecuteScalar());
+            conn.Close();
+            cmd.Parameters.Clear();
+            cmd.CommandText = q1;
+            if (id != 0)
+            {
+                int i = 0;
+                List<int> quantity = bill.Quantity;
+                foreach(Product p in bill.Products)
+                {
+                    cmd.Parameters.AddWithValue("@BI", id);
+                    cmd.Parameters.AddWithValue("@PI", p.ProductId);
+                    cmd.Parameters.AddWithValue("@QTY", quantity[i]);
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+                    UpdateProductQuantityAtShop(p.ProductId, p.QuantityAtShop - quantity[i]);
+                    UpdateProductTotalQuantity(p.ProductId, p.TotalQuantity - quantity[i]);
+                    i++;
+                    cmd.Parameters.Clear();
+                }
+                return id;
+            }
+
+            return -1;
+        }
+        public List<ProductSales> GetLastWeekSales()
+        {
+            List<Bill> bills = new List<Bill>();
+            string q = "select * from Bill_Details";
+            string cs = ConfigurationManager.ConnectionStrings["ProductManagement"].ConnectionString;
+            SqlConnection conn = new SqlConnection(cs);
+            SqlCommand cmd = new SqlCommand(q, conn);
+            conn.Open();
+            SqlDataReader rdr = cmd.ExecuteReader();
+            while (rdr.Read())
+            {
+                Bill b = new Bill();
+                b.BillDate = Convert.ToDateTime(rdr["BillDate"]);
+                DateTime now = DateTime.Now;
+                TimeSpan t = now.Subtract(b.BillDate);
+                if (t.Days <= 7)
+                {
+                    b.BillId = Convert.ToInt32(rdr["BillId"]);
+                    b.TotalAmount = Convert.ToInt32(rdr["TotalAmount"]);
+                    b.TotalItems = Convert.ToInt32(rdr["TotalItems"]);
+                    b.TotalProducts = Convert.ToInt32(rdr["TotalProducts"]);
+                    b.PaymentMethod = rdr["PaymentMethod"].ToString();
+                    bills.Add(b);
+                }
+            }
+            conn.Close();
+
+            List<ProductSales> productSalesList = new List<ProductSales>();
+            q = "select * from ProductInBill";
+            cmd = new SqlCommand(q, conn);
+            conn.Open();
+            rdr = cmd.ExecuteReader();
+            while (rdr.Read())
+            {
+                foreach (Bill bill in bills)
+                {
+                    if (Convert.ToInt32(rdr["BillId"]) == bill.BillId)
+                    {
+                        int flag = 0;
+                        foreach (ProductSales ps in productSalesList)
+                        {
+                            if (ps.ProductId == Convert.ToInt32(rdr["ProductId"]))
+                            {
+                                flag = 1;
+                                ps.QuantitySold += Convert.ToInt32(rdr["Quantity"]);
+                                break;
+                            }
+                        }
+                        if (flag == 0)
+                        {
+                            ProductSales s = new ProductSales();
+                            s.ProductId = Convert.ToInt32(rdr["ProductId"]);
+                            s.QuantitySold = Convert.ToInt32(rdr["Quantity"]);
+                            productSalesList.Add(s);
+                        }
+                    }
+                }
+            }
+            conn.Close();
+
+            foreach (ProductSales ps in productSalesList)
+            {
+                q = "select ProductName from Product_Details where ProductId=" + ps.ProductId;
+                cmd = new SqlCommand(q, conn);
+                conn.Open();
+                rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    ps.ProductName = rdr["ProductName"].ToString();
+                }
+                conn.Close();
+            }
+
+            List<ProductSales> l = productSalesList.OrderByDescending(x => x.QuantitySold).ToList();
+            return l;
+        }
+        public List<ProductSales> GetLastMonthSales()
+        {
+            List<Bill> bills = new List<Bill>();
+            string q = "select * from Bill_Details";
+            string cs = ConfigurationManager.ConnectionStrings["ProductManagement"].ConnectionString;
+            SqlConnection conn = new SqlConnection(cs);
+            SqlCommand cmd = new SqlCommand(q, conn);
+            conn.Open();
+            SqlDataReader rdr = cmd.ExecuteReader();
+            while (rdr.Read())
+            {
+                Bill b = new Bill();
+                b.BillDate = Convert.ToDateTime(rdr["BillDate"]);
+                DateTime now = DateTime.Now;
+                TimeSpan t = now.Subtract(b.BillDate);
+                if (t.Days <= 30)
+                {
+                    b.BillId = Convert.ToInt32(rdr["BillId"]);
+                    b.TotalAmount = Convert.ToInt32(rdr["TotalAmount"]);
+                    b.TotalItems = Convert.ToInt32(rdr["TotalItems"]);
+                    b.TotalProducts = Convert.ToInt32(rdr["TotalProducts"]);
+                    b.PaymentMethod = rdr["PaymentMethod"].ToString();
+                    bills.Add(b);
+                }
+            }
+            conn.Close();
+
+            List<ProductSales> productSalesList = new List<ProductSales>();
+            q = "select * from ProductInBill";
+            cmd = new SqlCommand(q, conn);
+            conn.Open();
+            rdr = cmd.ExecuteReader();
+            while (rdr.Read())
+            {
+                foreach (Bill bill in bills)
+                {
+                    if (Convert.ToInt32(rdr["BillId"]) == bill.BillId)
+                    {
+                        int flag = 0;
+                        foreach (ProductSales ps in productSalesList)
+                        {
+                            if (ps.ProductId == Convert.ToInt32(rdr["ProductId"]))
+                            {
+                                flag = 1;
+                                ps.QuantitySold += Convert.ToInt32(rdr["Quantity"]);
+                                break;
+                            }
+                        }
+                        if (flag == 0)
+                        {
+                            ProductSales s = new ProductSales();
+                            s.ProductId = Convert.ToInt32(rdr["ProductId"]);
+                            s.QuantitySold = Convert.ToInt32(rdr["Quantity"]);
+                            productSalesList.Add(s);
+                        }
+                    }
+                }
+            }
+            conn.Close();
+
+            foreach (ProductSales ps in productSalesList)
+            {
+                q = "select ProductName from Product_Details where ProductId=" + ps.ProductId;
+                cmd = new SqlCommand(q, conn);
+                conn.Open();
+                rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    ps.ProductName = rdr["ProductName"].ToString();
+                }
+                conn.Close();
+            }
+
+            List<ProductSales> l = productSalesList.OrderByDescending(x => x.QuantitySold).ToList();
+            return l;
+
+        }
+        public List<ProductSales> GetLastYearSales()
+        {
+            List<Bill> bills = new List<Bill>();
+            string q = "select * from Bill_Details";
+            string cs = ConfigurationManager.ConnectionStrings["ProductManagement"].ConnectionString;
+            SqlConnection conn = new SqlConnection(cs);
+            SqlCommand cmd = new SqlCommand(q, conn);
+            conn.Open();
+            SqlDataReader rdr = cmd.ExecuteReader();
+            while (rdr.Read())
+            {
+                Bill b = new Bill();
+                b.BillDate = Convert.ToDateTime(rdr["BillDate"]);
+                DateTime now = DateTime.Now;
+                TimeSpan t = now.Subtract(b.BillDate);
+                if (t.Days <= 365)
+                {
+                    b.BillId = Convert.ToInt32(rdr["BillId"]);
+                    b.TotalAmount = Convert.ToInt32(rdr["TotalAmount"]);
+                    b.TotalItems = Convert.ToInt32(rdr["TotalItems"]);
+                    b.TotalProducts = Convert.ToInt32(rdr["TotalProducts"]);
+                    b.PaymentMethod = rdr["PaymentMethod"].ToString();
+                    bills.Add(b);
+                }
+            }
+            conn.Close();
+
+            List<ProductSales> productSalesList = new List<ProductSales>();
+            q = "select * from ProductInBill";
+            cmd = new SqlCommand(q, conn);
+            conn.Open();
+            rdr = cmd.ExecuteReader();
+            while (rdr.Read())
+            {
+                foreach (Bill bill in bills)
+                {
+                    if (Convert.ToInt32(rdr["BillId"]) == bill.BillId)
+                    {
+                        int flag = 0;
+                        foreach (ProductSales ps in productSalesList)
+                        {
+                            if (ps.ProductId == Convert.ToInt32(rdr["ProductId"]))
+                            {
+                                flag = 1;
+                                ps.QuantitySold += Convert.ToInt32(rdr["Quantity"]);
+                                break;
+                            }
+                        }
+                        if (flag == 0)
+                        {
+                            ProductSales s = new ProductSales();
+                            s.ProductId = Convert.ToInt32(rdr["ProductId"]);
+                            s.QuantitySold = Convert.ToInt32(rdr["Quantity"]);
+                            productSalesList.Add(s);
+                        }
+                    }
+                }
+            }
+            conn.Close();
+
+            foreach (ProductSales ps in productSalesList)
+            {
+                q = "select ProductName from Product_Details where ProductId=" + ps.ProductId;
+                cmd = new SqlCommand(q, conn);
+                conn.Open();
+                rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    ps.ProductName = rdr["ProductName"].ToString();
+                }
+                conn.Close();
+            }
+
+            List<ProductSales> l = productSalesList.OrderByDescending(x => x.QuantitySold).ToList();
+            return l;
+
         }
 
     }

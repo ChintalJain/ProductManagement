@@ -5,6 +5,7 @@
       <xsd:import schemaLocation="http://localhost:8733/Design_Time_Addresses/ProductManagementService/ProductService/?xsd=xsd0" namespace="http://tempuri.org/" />
       <xsd:import schemaLocation="http://localhost:8733/Design_Time_Addresses/ProductManagementService/ProductService/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import schemaLocation="http://localhost:8733/Design_Time_Addresses/ProductManagementService/ProductService/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ProductManagementService" />
+      <xsd:import schemaLocation="http://localhost:8733/Design_Time_Addresses/ProductManagementService/ProductService/?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IProductService_AddProduct_InputMessage">
@@ -67,6 +68,30 @@
   <wsdl:message name="IProductService_GetProductInStock_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetProductInStockResponse" />
   </wsdl:message>
+  <wsdl:message name="IProductService_AddBill_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddBill" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_AddBill_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddBillResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_GetLastWeekSales_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLastWeekSales" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_GetLastWeekSales_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLastWeekSalesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_GetLastMonthSales_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLastMonthSales" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_GetLastMonthSales_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLastMonthSalesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_GetLastYearSales_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLastYearSales" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_GetLastYearSales_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLastYearSalesResponse" />
+  </wsdl:message>
   <wsdl:portType name="IProductService">
     <wsdl:operation name="AddProduct">
       <wsdl:input wsaw:Action="http://tempuri.org/IProductService/AddProduct" message="tns:IProductService_AddProduct_InputMessage" />
@@ -107,6 +132,22 @@
     <wsdl:operation name="GetProductInStock">
       <wsdl:input wsaw:Action="http://tempuri.org/IProductService/GetProductInStock" message="tns:IProductService_GetProductInStock_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IProductService/GetProductInStockResponse" message="tns:IProductService_GetProductInStock_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddBill">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProductService/AddBill" message="tns:IProductService_AddBill_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProductService/AddBillResponse" message="tns:IProductService_AddBill_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLastWeekSales">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProductService/GetLastWeekSales" message="tns:IProductService_GetLastWeekSales_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProductService/GetLastWeekSalesResponse" message="tns:IProductService_GetLastWeekSales_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLastMonthSales">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProductService/GetLastMonthSales" message="tns:IProductService_GetLastMonthSales_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProductService/GetLastMonthSalesResponse" message="tns:IProductService_GetLastMonthSales_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLastYearSales">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProductService/GetLastYearSales" message="tns:IProductService_GetLastYearSales_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProductService/GetLastYearSalesResponse" message="tns:IProductService_GetLastYearSales_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IProductService" type="tns:IProductService">
@@ -194,6 +235,42 @@
     </wsdl:operation>
     <wsdl:operation name="GetProductInStock">
       <soap:operation soapAction="http://tempuri.org/IProductService/GetProductInStock" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddBill">
+      <soap:operation soapAction="http://tempuri.org/IProductService/AddBill" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLastWeekSales">
+      <soap:operation soapAction="http://tempuri.org/IProductService/GetLastWeekSales" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLastMonthSales">
+      <soap:operation soapAction="http://tempuri.org/IProductService/GetLastMonthSales" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLastYearSales">
+      <soap:operation soapAction="http://tempuri.org/IProductService/GetLastYearSales" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

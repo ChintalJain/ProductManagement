@@ -154,6 +154,240 @@ namespace ProductManagementClient.ServiceReference1 {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Bill", Namespace="http://schemas.datacontract.org/2004/07/ProductManagementService")]
+    [System.SerializableAttribute()]
+    public partial class Bill : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime BillDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int BillIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PaymentMethodField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ProductManagementClient.ServiceReference1.Product[] ProductsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int[] QuantityField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int TotalAmountField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int TotalItemsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int TotalProductsField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime BillDate {
+            get {
+                return this.BillDateField;
+            }
+            set {
+                if ((this.BillDateField.Equals(value) != true)) {
+                    this.BillDateField = value;
+                    this.RaisePropertyChanged("BillDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int BillId {
+            get {
+                return this.BillIdField;
+            }
+            set {
+                if ((this.BillIdField.Equals(value) != true)) {
+                    this.BillIdField = value;
+                    this.RaisePropertyChanged("BillId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PaymentMethod {
+            get {
+                return this.PaymentMethodField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PaymentMethodField, value) != true)) {
+                    this.PaymentMethodField = value;
+                    this.RaisePropertyChanged("PaymentMethod");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ProductManagementClient.ServiceReference1.Product[] Products {
+            get {
+                return this.ProductsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProductsField, value) != true)) {
+                    this.ProductsField = value;
+                    this.RaisePropertyChanged("Products");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int[] Quantity {
+            get {
+                return this.QuantityField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.QuantityField, value) != true)) {
+                    this.QuantityField = value;
+                    this.RaisePropertyChanged("Quantity");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int TotalAmount {
+            get {
+                return this.TotalAmountField;
+            }
+            set {
+                if ((this.TotalAmountField.Equals(value) != true)) {
+                    this.TotalAmountField = value;
+                    this.RaisePropertyChanged("TotalAmount");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int TotalItems {
+            get {
+                return this.TotalItemsField;
+            }
+            set {
+                if ((this.TotalItemsField.Equals(value) != true)) {
+                    this.TotalItemsField = value;
+                    this.RaisePropertyChanged("TotalItems");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int TotalProducts {
+            get {
+                return this.TotalProductsField;
+            }
+            set {
+                if ((this.TotalProductsField.Equals(value) != true)) {
+                    this.TotalProductsField = value;
+                    this.RaisePropertyChanged("TotalProducts");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ProductSales", Namespace="http://schemas.datacontract.org/2004/07/ProductManagementService")]
+    [System.SerializableAttribute()]
+    public partial class ProductSales : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ProductIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ProductNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int QuantitySoldField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ProductId {
+            get {
+                return this.ProductIdField;
+            }
+            set {
+                if ((this.ProductIdField.Equals(value) != true)) {
+                    this.ProductIdField = value;
+                    this.RaisePropertyChanged("ProductId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ProductName {
+            get {
+                return this.ProductNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProductNameField, value) != true)) {
+                    this.ProductNameField = value;
+                    this.RaisePropertyChanged("ProductName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int QuantitySold {
+            get {
+                return this.QuantitySoldField;
+            }
+            set {
+                if ((this.QuantitySoldField.Equals(value) != true)) {
+                    this.QuantitySoldField = value;
+                    this.RaisePropertyChanged("QuantitySold");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.IProductService")]
     public interface IProductService {
@@ -217,6 +451,30 @@ namespace ProductManagementClient.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetProductInStock", ReplyAction="http://tempuri.org/IProductService/GetProductInStockResponse")]
         System.Threading.Tasks.Task<ProductManagementClient.ServiceReference1.Product[]> GetProductInStockAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/AddBill", ReplyAction="http://tempuri.org/IProductService/AddBillResponse")]
+        int AddBill(ProductManagementClient.ServiceReference1.Bill bill);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/AddBill", ReplyAction="http://tempuri.org/IProductService/AddBillResponse")]
+        System.Threading.Tasks.Task<int> AddBillAsync(ProductManagementClient.ServiceReference1.Bill bill);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetLastWeekSales", ReplyAction="http://tempuri.org/IProductService/GetLastWeekSalesResponse")]
+        ProductManagementClient.ServiceReference1.ProductSales[] GetLastWeekSales();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetLastWeekSales", ReplyAction="http://tempuri.org/IProductService/GetLastWeekSalesResponse")]
+        System.Threading.Tasks.Task<ProductManagementClient.ServiceReference1.ProductSales[]> GetLastWeekSalesAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetLastMonthSales", ReplyAction="http://tempuri.org/IProductService/GetLastMonthSalesResponse")]
+        ProductManagementClient.ServiceReference1.ProductSales[] GetLastMonthSales();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetLastMonthSales", ReplyAction="http://tempuri.org/IProductService/GetLastMonthSalesResponse")]
+        System.Threading.Tasks.Task<ProductManagementClient.ServiceReference1.ProductSales[]> GetLastMonthSalesAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetLastYearSales", ReplyAction="http://tempuri.org/IProductService/GetLastYearSalesResponse")]
+        ProductManagementClient.ServiceReference1.ProductSales[] GetLastYearSales();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetLastYearSales", ReplyAction="http://tempuri.org/IProductService/GetLastYearSalesResponse")]
+        System.Threading.Tasks.Task<ProductManagementClient.ServiceReference1.ProductSales[]> GetLastYearSalesAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -324,6 +582,38 @@ namespace ProductManagementClient.ServiceReference1 {
         
         public System.Threading.Tasks.Task<ProductManagementClient.ServiceReference1.Product[]> GetProductInStockAsync() {
             return base.Channel.GetProductInStockAsync();
+        }
+        
+        public int AddBill(ProductManagementClient.ServiceReference1.Bill bill) {
+            return base.Channel.AddBill(bill);
+        }
+        
+        public System.Threading.Tasks.Task<int> AddBillAsync(ProductManagementClient.ServiceReference1.Bill bill) {
+            return base.Channel.AddBillAsync(bill);
+        }
+        
+        public ProductManagementClient.ServiceReference1.ProductSales[] GetLastWeekSales() {
+            return base.Channel.GetLastWeekSales();
+        }
+        
+        public System.Threading.Tasks.Task<ProductManagementClient.ServiceReference1.ProductSales[]> GetLastWeekSalesAsync() {
+            return base.Channel.GetLastWeekSalesAsync();
+        }
+        
+        public ProductManagementClient.ServiceReference1.ProductSales[] GetLastMonthSales() {
+            return base.Channel.GetLastMonthSales();
+        }
+        
+        public System.Threading.Tasks.Task<ProductManagementClient.ServiceReference1.ProductSales[]> GetLastMonthSalesAsync() {
+            return base.Channel.GetLastMonthSalesAsync();
+        }
+        
+        public ProductManagementClient.ServiceReference1.ProductSales[] GetLastYearSales() {
+            return base.Channel.GetLastYearSales();
+        }
+        
+        public System.Threading.Tasks.Task<ProductManagementClient.ServiceReference1.ProductSales[]> GetLastYearSalesAsync() {
+            return base.Channel.GetLastYearSalesAsync();
         }
     }
 }
