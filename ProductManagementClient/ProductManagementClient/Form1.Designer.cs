@@ -68,37 +68,37 @@
             this.AddProductBtn = new System.Windows.Forms.Button();
             this.ProductsBtn = new System.Windows.Forms.Button();
             this.BillPanel = new System.Windows.Forms.Panel();
-            this.BillsBtn = new System.Windows.Forms.Button();
-            this.PlaceOrderBtn = new System.Windows.Forms.Button();
-            this.LastMonthSalesBtn = new System.Windows.Forms.Button();
-            this.LastWeekSalesBtn = new System.Windows.Forms.Button();
-            this.PlaceOrderPanel = new System.Windows.Forms.Panel();
-            this.ProductInStockLB = new System.Windows.Forms.ListBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.QuantityInOrderTB = new System.Windows.Forms.TextBox();
-            this.AddToOrderBtn = new System.Windows.Forms.Button();
-            this.RemoveFromOrderTB = new System.Windows.Forms.Button();
-            this.ProductInOrderLB = new System.Windows.Forms.ListBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.TotalProductsTB = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.TotalItemsTB = new System.Windows.Forms.TextBox();
-            this.TotalAmountTB = new System.Windows.Forms.TextBox();
-            this.GenerateBillBtn = new System.Windows.Forms.Button();
-            this.ConfirmOrderBtn = new System.Windows.Forms.Button();
-            this.PaymentMethodLB = new System.Windows.Forms.ListBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.OrderIDLbl = new System.Windows.Forms.Label();
-            this.LastYearSalesBtn = new System.Windows.Forms.Button();
-            this.LastWeekSalesPanel = new System.Windows.Forms.Panel();
-            this.dataGridView5 = new System.Windows.Forms.DataGridView();
-            this.LastMonthSalesPanel = new System.Windows.Forms.Panel();
-            this.dataGridView6 = new System.Windows.Forms.DataGridView();
             this.LastYearSalesPanel = new System.Windows.Forms.Panel();
             this.dataGridView7 = new System.Windows.Forms.DataGridView();
+            this.LastMonthSalesPanel = new System.Windows.Forms.Panel();
+            this.dataGridView6 = new System.Windows.Forms.DataGridView();
+            this.LastWeekSalesPanel = new System.Windows.Forms.Panel();
+            this.dataGridView5 = new System.Windows.Forms.DataGridView();
+            this.LastYearSalesBtn = new System.Windows.Forms.Button();
+            this.PlaceOrderPanel = new System.Windows.Forms.Panel();
+            this.OrderIDLbl = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.PaymentMethodLB = new System.Windows.Forms.ListBox();
+            this.ConfirmOrderBtn = new System.Windows.Forms.Button();
+            this.GenerateBillBtn = new System.Windows.Forms.Button();
+            this.TotalAmountTB = new System.Windows.Forms.TextBox();
+            this.TotalItemsTB = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.TotalProductsTB = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.ProductInOrderLB = new System.Windows.Forms.ListBox();
+            this.RemoveFromOrderTB = new System.Windows.Forms.Button();
+            this.AddToOrderBtn = new System.Windows.Forms.Button();
+            this.QuantityInOrderTB = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.ProductInStockLB = new System.Windows.Forms.ListBox();
+            this.LastWeekSalesBtn = new System.Windows.Forms.Button();
+            this.LastMonthSalesBtn = new System.Windows.Forms.Button();
+            this.PlaceOrderBtn = new System.Windows.Forms.Button();
+            this.BillsBtn = new System.Windows.Forms.Button();
             this.ProductsPanel.SuspendLayout();
             this.ProductOutOfStockPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
@@ -110,13 +110,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.AddProductPanel.SuspendLayout();
             this.BillPanel.SuspendLayout();
-            this.PlaceOrderPanel.SuspendLayout();
-            this.LastWeekSalesPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
-            this.LastMonthSalesPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).BeginInit();
             this.LastYearSalesPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView7)).BeginInit();
+            this.LastMonthSalesPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).BeginInit();
+            this.LastWeekSalesPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
+            this.PlaceOrderPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // ProductsPanel
@@ -535,45 +535,78 @@
             this.BillPanel.Size = new System.Drawing.Size(1639, 726);
             this.BillPanel.TabIndex = 1;
             // 
-            // BillsBtn
+            // LastYearSalesPanel
             // 
-            this.BillsBtn.Location = new System.Drawing.Point(279, 21);
-            this.BillsBtn.Name = "BillsBtn";
-            this.BillsBtn.Size = new System.Drawing.Size(196, 46);
-            this.BillsBtn.TabIndex = 0;
-            this.BillsBtn.Text = "Bills";
-            this.BillsBtn.UseVisualStyleBackColor = true;
-            this.BillsBtn.Click += new System.EventHandler(this.BillsBtn_Click);
+            this.LastYearSalesPanel.Controls.Add(this.dataGridView7);
+            this.LastYearSalesPanel.Location = new System.Drawing.Point(40, 123);
+            this.LastYearSalesPanel.Name = "LastYearSalesPanel";
+            this.LastYearSalesPanel.Size = new System.Drawing.Size(1529, 578);
+            this.LastYearSalesPanel.TabIndex = 2;
             // 
-            // PlaceOrderBtn
+            // dataGridView7
             // 
-            this.PlaceOrderBtn.Location = new System.Drawing.Point(40, 34);
-            this.PlaceOrderBtn.Name = "PlaceOrderBtn";
-            this.PlaceOrderBtn.Size = new System.Drawing.Size(203, 57);
-            this.PlaceOrderBtn.TabIndex = 0;
-            this.PlaceOrderBtn.Text = "Place Order";
-            this.PlaceOrderBtn.UseVisualStyleBackColor = true;
-            this.PlaceOrderBtn.Click += new System.EventHandler(this.PlaceOrderBtn_Click);
+            this.dataGridView7.AllowUserToAddRows = false;
+            this.dataGridView7.AllowUserToDeleteRows = false;
+            this.dataGridView7.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView7.Location = new System.Drawing.Point(41, 38);
+            this.dataGridView7.Name = "dataGridView7";
+            this.dataGridView7.ReadOnly = true;
+            this.dataGridView7.RowHeadersWidth = 62;
+            this.dataGridView7.RowTemplate.Height = 28;
+            this.dataGridView7.Size = new System.Drawing.Size(739, 246);
+            this.dataGridView7.TabIndex = 2;
             // 
-            // LastMonthSalesBtn
+            // LastMonthSalesPanel
             // 
-            this.LastMonthSalesBtn.Location = new System.Drawing.Point(599, 34);
-            this.LastMonthSalesBtn.Name = "LastMonthSalesBtn";
-            this.LastMonthSalesBtn.Size = new System.Drawing.Size(238, 57);
-            this.LastMonthSalesBtn.TabIndex = 1;
-            this.LastMonthSalesBtn.Text = "Last Month Sales";
-            this.LastMonthSalesBtn.UseVisualStyleBackColor = true;
-            this.LastMonthSalesBtn.Click += new System.EventHandler(this.LastMonthSalesBtn_Click);
+            this.LastMonthSalesPanel.Controls.Add(this.dataGridView6);
+            this.LastMonthSalesPanel.Location = new System.Drawing.Point(40, 123);
+            this.LastMonthSalesPanel.Name = "LastMonthSalesPanel";
+            this.LastMonthSalesPanel.Size = new System.Drawing.Size(1529, 578);
+            this.LastMonthSalesPanel.TabIndex = 1;
             // 
-            // LastWeekSalesBtn
+            // dataGridView6
             // 
-            this.LastWeekSalesBtn.Location = new System.Drawing.Point(307, 34);
-            this.LastWeekSalesBtn.Name = "LastWeekSalesBtn";
-            this.LastWeekSalesBtn.Size = new System.Drawing.Size(238, 57);
-            this.LastWeekSalesBtn.TabIndex = 2;
-            this.LastWeekSalesBtn.Text = "Last Week Sales";
-            this.LastWeekSalesBtn.UseVisualStyleBackColor = true;
-            this.LastWeekSalesBtn.Click += new System.EventHandler(this.LastWeekSalesBtn_Click);
+            this.dataGridView6.AllowUserToAddRows = false;
+            this.dataGridView6.AllowUserToDeleteRows = false;
+            this.dataGridView6.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView6.Location = new System.Drawing.Point(41, 38);
+            this.dataGridView6.Name = "dataGridView6";
+            this.dataGridView6.ReadOnly = true;
+            this.dataGridView6.RowHeadersWidth = 62;
+            this.dataGridView6.RowTemplate.Height = 28;
+            this.dataGridView6.Size = new System.Drawing.Size(739, 246);
+            this.dataGridView6.TabIndex = 1;
+            // 
+            // LastWeekSalesPanel
+            // 
+            this.LastWeekSalesPanel.Controls.Add(this.dataGridView5);
+            this.LastWeekSalesPanel.Location = new System.Drawing.Point(40, 123);
+            this.LastWeekSalesPanel.Name = "LastWeekSalesPanel";
+            this.LastWeekSalesPanel.Size = new System.Drawing.Size(1529, 578);
+            this.LastWeekSalesPanel.TabIndex = 19;
+            // 
+            // dataGridView5
+            // 
+            this.dataGridView5.AllowUserToAddRows = false;
+            this.dataGridView5.AllowUserToDeleteRows = false;
+            this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView5.Location = new System.Drawing.Point(41, 38);
+            this.dataGridView5.Name = "dataGridView5";
+            this.dataGridView5.ReadOnly = true;
+            this.dataGridView5.RowHeadersWidth = 62;
+            this.dataGridView5.RowTemplate.Height = 28;
+            this.dataGridView5.Size = new System.Drawing.Size(739, 246);
+            this.dataGridView5.TabIndex = 0;
+            // 
+            // LastYearSalesBtn
+            // 
+            this.LastYearSalesBtn.Location = new System.Drawing.Point(876, 34);
+            this.LastYearSalesBtn.Name = "LastYearSalesBtn";
+            this.LastYearSalesBtn.Size = new System.Drawing.Size(238, 57);
+            this.LastYearSalesBtn.TabIndex = 4;
+            this.LastYearSalesBtn.Text = "Last Year Sales";
+            this.LastYearSalesBtn.UseVisualStyleBackColor = true;
+            this.LastYearSalesBtn.Click += new System.EventHandler(this.LastYearSalesBtn_Click);
             // 
             // PlaceOrderPanel
             // 
@@ -601,146 +634,22 @@
             this.PlaceOrderPanel.Size = new System.Drawing.Size(1529, 578);
             this.PlaceOrderPanel.TabIndex = 3;
             // 
-            // ProductInStockLB
+            // OrderIDLbl
             // 
-            this.ProductInStockLB.FormattingEnabled = true;
-            this.ProductInStockLB.ItemHeight = 20;
-            this.ProductInStockLB.Location = new System.Drawing.Point(39, 51);
-            this.ProductInStockLB.Name = "ProductInStockLB";
-            this.ProductInStockLB.Size = new System.Drawing.Size(424, 224);
-            this.ProductInStockLB.TabIndex = 0;
+            this.OrderIDLbl.AutoSize = true;
+            this.OrderIDLbl.Location = new System.Drawing.Point(55, 446);
+            this.OrderIDLbl.Name = "OrderIDLbl";
+            this.OrderIDLbl.Size = new System.Drawing.Size(0, 20);
+            this.OrderIDLbl.TabIndex = 18;
             // 
-            // label9
+            // label15
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(35, 20);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(134, 20);
-            this.label9.TabIndex = 1;
-            this.label9.Text = "Select Products :-";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(579, 51);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(81, 20);
-            this.label10.TabIndex = 2;
-            this.label10.Text = "Quantity :-";
-            // 
-            // QuantityInOrderTB
-            // 
-            this.QuantityInOrderTB.Location = new System.Drawing.Point(543, 74);
-            this.QuantityInOrderTB.Name = "QuantityInOrderTB";
-            this.QuantityInOrderTB.Size = new System.Drawing.Size(150, 26);
-            this.QuantityInOrderTB.TabIndex = 3;
-            this.QuantityInOrderTB.Text = "1";
-            // 
-            // AddToOrderBtn
-            // 
-            this.AddToOrderBtn.Location = new System.Drawing.Point(543, 126);
-            this.AddToOrderBtn.Name = "AddToOrderBtn";
-            this.AddToOrderBtn.Size = new System.Drawing.Size(152, 43);
-            this.AddToOrderBtn.TabIndex = 4;
-            this.AddToOrderBtn.Text = "Add To Order";
-            this.AddToOrderBtn.UseVisualStyleBackColor = true;
-            this.AddToOrderBtn.Click += new System.EventHandler(this.AddToOrderBtn_Click);
-            // 
-            // RemoveFromOrderTB
-            // 
-            this.RemoveFromOrderTB.Location = new System.Drawing.Point(532, 214);
-            this.RemoveFromOrderTB.Name = "RemoveFromOrderTB";
-            this.RemoveFromOrderTB.Size = new System.Drawing.Size(183, 43);
-            this.RemoveFromOrderTB.TabIndex = 5;
-            this.RemoveFromOrderTB.Text = "Remove From Order";
-            this.RemoveFromOrderTB.UseVisualStyleBackColor = true;
-            this.RemoveFromOrderTB.Click += new System.EventHandler(this.RemoveFromOrderTB_Click);
-            // 
-            // ProductInOrderLB
-            // 
-            this.ProductInOrderLB.FormattingEnabled = true;
-            this.ProductInOrderLB.ItemHeight = 20;
-            this.ProductInOrderLB.Location = new System.Drawing.Point(790, 51);
-            this.ProductInOrderLB.Name = "ProductInOrderLB";
-            this.ProductInOrderLB.Size = new System.Drawing.Size(424, 224);
-            this.ProductInOrderLB.TabIndex = 6;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(786, 20);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(147, 20);
-            this.label11.TabIndex = 7;
-            this.label11.Text = "Products In Order :-";
-            // 
-            // TotalProductsTB
-            // 
-            this.TotalProductsTB.Location = new System.Drawing.Point(217, 309);
-            this.TotalProductsTB.Name = "TotalProductsTB";
-            this.TotalProductsTB.Size = new System.Drawing.Size(166, 26);
-            this.TotalProductsTB.TabIndex = 8;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(52, 315);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(124, 20);
-            this.label12.TabIndex = 9;
-            this.label12.Text = "Total Products :-";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(52, 357);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(101, 20);
-            this.label13.TabIndex = 10;
-            this.label13.Text = "Total Items :-";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(52, 402);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(117, 20);
-            this.label14.TabIndex = 11;
-            this.label14.Text = "Total Amount :-";
-            // 
-            // TotalItemsTB
-            // 
-            this.TotalItemsTB.Location = new System.Drawing.Point(217, 351);
-            this.TotalItemsTB.Name = "TotalItemsTB";
-            this.TotalItemsTB.Size = new System.Drawing.Size(166, 26);
-            this.TotalItemsTB.TabIndex = 12;
-            // 
-            // TotalAmountTB
-            // 
-            this.TotalAmountTB.Location = new System.Drawing.Point(217, 396);
-            this.TotalAmountTB.Name = "TotalAmountTB";
-            this.TotalAmountTB.Size = new System.Drawing.Size(166, 26);
-            this.TotalAmountTB.TabIndex = 13;
-            // 
-            // GenerateBillBtn
-            // 
-            this.GenerateBillBtn.Location = new System.Drawing.Point(56, 480);
-            this.GenerateBillBtn.Name = "GenerateBillBtn";
-            this.GenerateBillBtn.Size = new System.Drawing.Size(225, 54);
-            this.GenerateBillBtn.TabIndex = 14;
-            this.GenerateBillBtn.Text = "Generate Bill";
-            this.GenerateBillBtn.UseVisualStyleBackColor = true;
-            this.GenerateBillBtn.Click += new System.EventHandler(this.GenerateBillBtn_Click);
-            // 
-            // ConfirmOrderBtn
-            // 
-            this.ConfirmOrderBtn.Location = new System.Drawing.Point(399, 480);
-            this.ConfirmOrderBtn.Name = "ConfirmOrderBtn";
-            this.ConfirmOrderBtn.Size = new System.Drawing.Size(225, 54);
-            this.ConfirmOrderBtn.TabIndex = 15;
-            this.ConfirmOrderBtn.Text = "Confirm Order";
-            this.ConfirmOrderBtn.UseVisualStyleBackColor = true;
-            this.ConfirmOrderBtn.Click += new System.EventHandler(this.ConfirmOrderBtn_Click);
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(516, 302);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(128, 20);
+            this.label15.TabIndex = 17;
+            this.label15.Text = "Payment Mode :-";
             // 
             // PaymentMethodLB
             // 
@@ -755,95 +664,187 @@
             this.PaymentMethodLB.Size = new System.Drawing.Size(148, 84);
             this.PaymentMethodLB.TabIndex = 16;
             // 
-            // label15
+            // ConfirmOrderBtn
             // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(516, 302);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(128, 20);
-            this.label15.TabIndex = 17;
-            this.label15.Text = "Payment Mode :-";
+            this.ConfirmOrderBtn.Location = new System.Drawing.Point(399, 480);
+            this.ConfirmOrderBtn.Name = "ConfirmOrderBtn";
+            this.ConfirmOrderBtn.Size = new System.Drawing.Size(225, 54);
+            this.ConfirmOrderBtn.TabIndex = 15;
+            this.ConfirmOrderBtn.Text = "Confirm Order";
+            this.ConfirmOrderBtn.UseVisualStyleBackColor = true;
+            this.ConfirmOrderBtn.Click += new System.EventHandler(this.ConfirmOrderBtn_Click);
             // 
-            // OrderIDLbl
+            // GenerateBillBtn
             // 
-            this.OrderIDLbl.AutoSize = true;
-            this.OrderIDLbl.Location = new System.Drawing.Point(55, 446);
-            this.OrderIDLbl.Name = "OrderIDLbl";
-            this.OrderIDLbl.Size = new System.Drawing.Size(0, 20);
-            this.OrderIDLbl.TabIndex = 18;
+            this.GenerateBillBtn.Location = new System.Drawing.Point(56, 480);
+            this.GenerateBillBtn.Name = "GenerateBillBtn";
+            this.GenerateBillBtn.Size = new System.Drawing.Size(225, 54);
+            this.GenerateBillBtn.TabIndex = 14;
+            this.GenerateBillBtn.Text = "Generate Bill";
+            this.GenerateBillBtn.UseVisualStyleBackColor = true;
+            this.GenerateBillBtn.Click += new System.EventHandler(this.GenerateBillBtn_Click);
             // 
-            // LastYearSalesBtn
+            // TotalAmountTB
             // 
-            this.LastYearSalesBtn.Location = new System.Drawing.Point(876, 34);
-            this.LastYearSalesBtn.Name = "LastYearSalesBtn";
-            this.LastYearSalesBtn.Size = new System.Drawing.Size(238, 57);
-            this.LastYearSalesBtn.TabIndex = 4;
-            this.LastYearSalesBtn.Text = "Last Year Sales";
-            this.LastYearSalesBtn.UseVisualStyleBackColor = true;
-            this.LastYearSalesBtn.Click += new System.EventHandler(this.LastYearSalesBtn_Click);
+            this.TotalAmountTB.Location = new System.Drawing.Point(217, 396);
+            this.TotalAmountTB.Name = "TotalAmountTB";
+            this.TotalAmountTB.Size = new System.Drawing.Size(166, 26);
+            this.TotalAmountTB.TabIndex = 13;
             // 
-            // LastWeekSalesPanel
+            // TotalItemsTB
             // 
-            this.LastWeekSalesPanel.Controls.Add(this.dataGridView5);
-            this.LastWeekSalesPanel.Location = new System.Drawing.Point(40, 123);
-            this.LastWeekSalesPanel.Name = "LastWeekSalesPanel";
-            this.LastWeekSalesPanel.Size = new System.Drawing.Size(1529, 578);
-            this.LastWeekSalesPanel.TabIndex = 19;
+            this.TotalItemsTB.Location = new System.Drawing.Point(217, 351);
+            this.TotalItemsTB.Name = "TotalItemsTB";
+            this.TotalItemsTB.Size = new System.Drawing.Size(166, 26);
+            this.TotalItemsTB.TabIndex = 12;
             // 
-            // dataGridView5
+            // label14
             // 
-            this.dataGridView5.AllowUserToAddRows = false;
-            this.dataGridView5.AllowUserToDeleteRows = false;
-            this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView5.Location = new System.Drawing.Point(41, 38);
-            this.dataGridView5.Name = "dataGridView5";
-            this.dataGridView5.ReadOnly = true;
-            this.dataGridView5.RowHeadersWidth = 62;
-            this.dataGridView5.RowTemplate.Height = 28;
-            this.dataGridView5.Size = new System.Drawing.Size(739, 246);
-            this.dataGridView5.TabIndex = 0;
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(52, 402);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(117, 20);
+            this.label14.TabIndex = 11;
+            this.label14.Text = "Total Amount :-";
             // 
-            // LastMonthSalesPanel
+            // label13
             // 
-            this.LastMonthSalesPanel.Controls.Add(this.dataGridView6);
-            this.LastMonthSalesPanel.Location = new System.Drawing.Point(40, 123);
-            this.LastMonthSalesPanel.Name = "LastMonthSalesPanel";
-            this.LastMonthSalesPanel.Size = new System.Drawing.Size(1529, 578);
-            this.LastMonthSalesPanel.TabIndex = 1;
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(52, 357);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(101, 20);
+            this.label13.TabIndex = 10;
+            this.label13.Text = "Total Items :-";
             // 
-            // dataGridView6
+            // label12
             // 
-            this.dataGridView6.AllowUserToAddRows = false;
-            this.dataGridView6.AllowUserToDeleteRows = false;
-            this.dataGridView6.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView6.Location = new System.Drawing.Point(41, 38);
-            this.dataGridView6.Name = "dataGridView6";
-            this.dataGridView6.ReadOnly = true;
-            this.dataGridView6.RowHeadersWidth = 62;
-            this.dataGridView6.RowTemplate.Height = 28;
-            this.dataGridView6.Size = new System.Drawing.Size(739, 246);
-            this.dataGridView6.TabIndex = 1;
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(52, 315);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(124, 20);
+            this.label12.TabIndex = 9;
+            this.label12.Text = "Total Products :-";
             // 
-            // LastYearSalesPanel
+            // TotalProductsTB
             // 
-            this.LastYearSalesPanel.Controls.Add(this.dataGridView7);
-            this.LastYearSalesPanel.Location = new System.Drawing.Point(40, 123);
-            this.LastYearSalesPanel.Name = "LastYearSalesPanel";
-            this.LastYearSalesPanel.Size = new System.Drawing.Size(1529, 578);
-            this.LastYearSalesPanel.TabIndex = 2;
+            this.TotalProductsTB.Location = new System.Drawing.Point(217, 309);
+            this.TotalProductsTB.Name = "TotalProductsTB";
+            this.TotalProductsTB.Size = new System.Drawing.Size(166, 26);
+            this.TotalProductsTB.TabIndex = 8;
             // 
-            // dataGridView7
+            // label11
             // 
-            this.dataGridView7.AllowUserToAddRows = false;
-            this.dataGridView7.AllowUserToDeleteRows = false;
-            this.dataGridView7.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView7.Location = new System.Drawing.Point(41, 38);
-            this.dataGridView7.Name = "dataGridView7";
-            this.dataGridView7.ReadOnly = true;
-            this.dataGridView7.RowHeadersWidth = 62;
-            this.dataGridView7.RowTemplate.Height = 28;
-            this.dataGridView7.Size = new System.Drawing.Size(739, 246);
-            this.dataGridView7.TabIndex = 2;
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(786, 20);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(147, 20);
+            this.label11.TabIndex = 7;
+            this.label11.Text = "Products In Order :-";
+            // 
+            // ProductInOrderLB
+            // 
+            this.ProductInOrderLB.FormattingEnabled = true;
+            this.ProductInOrderLB.HorizontalScrollbar = true;
+            this.ProductInOrderLB.ItemHeight = 20;
+            this.ProductInOrderLB.Location = new System.Drawing.Point(790, 51);
+            this.ProductInOrderLB.Name = "ProductInOrderLB";
+            this.ProductInOrderLB.Size = new System.Drawing.Size(424, 224);
+            this.ProductInOrderLB.TabIndex = 6;
+            // 
+            // RemoveFromOrderTB
+            // 
+            this.RemoveFromOrderTB.Location = new System.Drawing.Point(532, 214);
+            this.RemoveFromOrderTB.Name = "RemoveFromOrderTB";
+            this.RemoveFromOrderTB.Size = new System.Drawing.Size(183, 43);
+            this.RemoveFromOrderTB.TabIndex = 5;
+            this.RemoveFromOrderTB.Text = "Remove From Order";
+            this.RemoveFromOrderTB.UseVisualStyleBackColor = true;
+            this.RemoveFromOrderTB.Click += new System.EventHandler(this.RemoveFromOrderTB_Click);
+            // 
+            // AddToOrderBtn
+            // 
+            this.AddToOrderBtn.Location = new System.Drawing.Point(543, 126);
+            this.AddToOrderBtn.Name = "AddToOrderBtn";
+            this.AddToOrderBtn.Size = new System.Drawing.Size(152, 43);
+            this.AddToOrderBtn.TabIndex = 4;
+            this.AddToOrderBtn.Text = "Add To Order";
+            this.AddToOrderBtn.UseVisualStyleBackColor = true;
+            this.AddToOrderBtn.Click += new System.EventHandler(this.AddToOrderBtn_Click);
+            // 
+            // QuantityInOrderTB
+            // 
+            this.QuantityInOrderTB.Location = new System.Drawing.Point(543, 74);
+            this.QuantityInOrderTB.Name = "QuantityInOrderTB";
+            this.QuantityInOrderTB.Size = new System.Drawing.Size(150, 26);
+            this.QuantityInOrderTB.TabIndex = 3;
+            this.QuantityInOrderTB.Text = "1";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(579, 51);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(81, 20);
+            this.label10.TabIndex = 2;
+            this.label10.Text = "Quantity :-";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(35, 20);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(134, 20);
+            this.label9.TabIndex = 1;
+            this.label9.Text = "Select Products :-";
+            // 
+            // ProductInStockLB
+            // 
+            this.ProductInStockLB.FormattingEnabled = true;
+            this.ProductInStockLB.ItemHeight = 20;
+            this.ProductInStockLB.Location = new System.Drawing.Point(39, 51);
+            this.ProductInStockLB.Name = "ProductInStockLB";
+            this.ProductInStockLB.Size = new System.Drawing.Size(424, 224);
+            this.ProductInStockLB.TabIndex = 0;
+            // 
+            // LastWeekSalesBtn
+            // 
+            this.LastWeekSalesBtn.Location = new System.Drawing.Point(307, 34);
+            this.LastWeekSalesBtn.Name = "LastWeekSalesBtn";
+            this.LastWeekSalesBtn.Size = new System.Drawing.Size(238, 57);
+            this.LastWeekSalesBtn.TabIndex = 2;
+            this.LastWeekSalesBtn.Text = "Last Week Sales";
+            this.LastWeekSalesBtn.UseVisualStyleBackColor = true;
+            this.LastWeekSalesBtn.Click += new System.EventHandler(this.LastWeekSalesBtn_Click);
+            // 
+            // LastMonthSalesBtn
+            // 
+            this.LastMonthSalesBtn.Location = new System.Drawing.Point(599, 34);
+            this.LastMonthSalesBtn.Name = "LastMonthSalesBtn";
+            this.LastMonthSalesBtn.Size = new System.Drawing.Size(238, 57);
+            this.LastMonthSalesBtn.TabIndex = 1;
+            this.LastMonthSalesBtn.Text = "Last Month Sales";
+            this.LastMonthSalesBtn.UseVisualStyleBackColor = true;
+            this.LastMonthSalesBtn.Click += new System.EventHandler(this.LastMonthSalesBtn_Click);
+            // 
+            // PlaceOrderBtn
+            // 
+            this.PlaceOrderBtn.Location = new System.Drawing.Point(40, 34);
+            this.PlaceOrderBtn.Name = "PlaceOrderBtn";
+            this.PlaceOrderBtn.Size = new System.Drawing.Size(203, 57);
+            this.PlaceOrderBtn.TabIndex = 0;
+            this.PlaceOrderBtn.Text = "Place Order";
+            this.PlaceOrderBtn.UseVisualStyleBackColor = true;
+            this.PlaceOrderBtn.Click += new System.EventHandler(this.PlaceOrderBtn_Click);
+            // 
+            // BillsBtn
+            // 
+            this.BillsBtn.Location = new System.Drawing.Point(279, 21);
+            this.BillsBtn.Name = "BillsBtn";
+            this.BillsBtn.Size = new System.Drawing.Size(196, 46);
+            this.BillsBtn.TabIndex = 0;
+            this.BillsBtn.Text = "Bills";
+            this.BillsBtn.UseVisualStyleBackColor = true;
+            this.BillsBtn.Click += new System.EventHandler(this.BillsBtn_Click);
             // 
             // Form1
             // 
@@ -870,14 +871,14 @@
             this.AddProductPanel.ResumeLayout(false);
             this.AddProductPanel.PerformLayout();
             this.BillPanel.ResumeLayout(false);
-            this.PlaceOrderPanel.ResumeLayout(false);
-            this.PlaceOrderPanel.PerformLayout();
-            this.LastWeekSalesPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
-            this.LastMonthSalesPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).EndInit();
             this.LastYearSalesPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView7)).EndInit();
+            this.LastMonthSalesPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).EndInit();
+            this.LastWeekSalesPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
+            this.PlaceOrderPanel.ResumeLayout(false);
+            this.PlaceOrderPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
